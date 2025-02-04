@@ -1,0 +1,155 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffc5e2; /* Cor de fundo rosa */
+  font-family: Arial, sans-serif;
+}
+
+#camera-container {
+  display: flex;
+  align-items: center; /* Centraliza a câmera e o container de fotos */
+}
+
+#camera {
+  width: 300px;
+  height: 400px;
+  background: linear-gradient(45deg, #ff3385, #ff66b2); /* Gradiente rosa metálico */
+  border-radius: 20px; /* Bordas arredondadas */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Sombra para profundidade */
+  position: relative; /* Desfixa a câmera */
+  top: 0; /* Posiciona a câmera no topo */
+  left: 0; /* Posiciona a câmera à esquerda */
+  z-index: 10;
+}
+
+#camera--view {
+  width: 100%;
+  height: 60%;
+  background-color: #e6007e; /* Fundo rosa para a tela da câmera */
+  border-radius: 10px;
+  position: relative;
+  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.2); /* Detalhe de brilho interno */
+}
+
+#camera--sensor {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 10px;
+  background-color: #ff80bf; /* Sensor rosa */
+  border-radius: 5px;
+}
+
+#camera--trigger {
+  width: 60px;
+  height: 60px;
+  background-color: #ff4d4d; /* Botão vermelho */
+  border-radius: 50%;
+  border: none;
+  margin-top: 20px;
+  position: relative;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#camera--trigger::before {
+  content: "";
+  width: 50px;
+  height: 50px;
+  background-color: #b30000;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#camera--output {
+  display: none;
+}
+
+#button-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+#btnListar, #btnAtualizar {
+  width: 150px;
+  background-color: #ff3385; /* Cor de fundo rosa para os botões */
+  color: white;
+  font-size: 16px;
+  border-radius: 30px;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.galeria-title {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+#resultados {
+  margin-top: 50px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Container da galeria ao lado da câmera */
+#foto-container {
+  display: flex;
+  flex-direction: column; /* Fotos empilhadas verticalmente */
+  margin-left: 350px; /* Espaço para a câmera fixada */
+  align-items: center; /* Centraliza as fotos na galeria */
+  overflow-y: auto; /* Caso o número de fotos ultrapasse a altura, a galeria terá rolagem */
+  height: 80vh; /* Limitar a altura da galeria */
+}
+
+/* Fotos em estilo Polaroid */
+.foto-polaroid {
+  display: inline-block;
+  text-align: center;
+  margin: 10px;
+  font-size: 16px; /* Foto com fonte menor */
+}
+
+.foto-polaroid img {
+  width: 220px; /* Ajustando o tamanho das fotos */
+  height: auto;
+  border-top: #fff700 solid 10px; 
+  border-right: #fff700 solid 10px; /* Borda direita */
+  border-left: #fff700 solid 10px; /* Borda esquerda */
+  border-bottom: #fff700 solid 10px; /* Borda inferior mais larga */
+  border-radius: 10px;
+}
+
+.foto-polaroid button {
+  display: block; 
+  margin: 10px auto 0 auto; 
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 14px;
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
+}
